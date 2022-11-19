@@ -1,17 +1,40 @@
 import React from "react";
-import { View } from "react-native";
+import {StyleSheet, View} from "react-native";
 import { MainStackParamList } from "../types/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Layout, Text, TopNav, useTheme, themeColor } from "react-native-rapi-ui";
 import { Ionicons } from "@expo/vector-icons";
-import { Button, ButtonGroup, withTheme } from '@rneui/themed';
+import {Avatar, Button, ButtonGroup, Divider, Image, withTheme} from '@rneui/themed';
 
+const styles = StyleSheet.create({
+    list: {
+        width: '100%',
+        backgroundColor: '#000',
+    },
+    item: {
+        aspectRatio: 1,
+        width: '100%',
+        height: "170px",
+        display: "flex",
+        justifyContent: "flex-start",
+        flex: 1,
+    },
+});
 export default function ({
   navigation,
 }: NativeStackScreenProps<MainStackParamList, "MainTabs">) {
 
   const { isDarkmode, setTheme } = useTheme();
-
+  const list = ["Matricule", "Email", "Mot de passe", "Téléphone", "Date de naissance", "Adresse"]
+    const listItem = list.map((value)=>{
+        return(<div style={{
+            display: "flex",
+            flexDirection: "column"
+        }}>
+            <Text style={{padding: "30px", fontWeight: "bold"}}> {value}</Text>
+            <Divider/>
+        </div>)
+    })
   return (
     <Layout>
       <TopNav
@@ -34,23 +57,47 @@ export default function ({
       <View
         style={{
           flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#FFFF"
+          backgroundColor: "#FFFF",
+            display: "flex",
+            flexDirection: "column"
         }}
       >
-         <Button
-              title={'React Native Elements'}
-              containerStyle={{
-                width: 200,
-                marginHorizontal: 50,
-                marginVertical: 10,
-              }}
-            />
-        <Text>This is the Profile tab</Text>
+        <div>
+            <div>
+                <Image
+                    source={{uri: "https://source.unsplash.com/random?sig=1"}}
+                    containerStyle={styles.item}
+                />
+                <div
+                    style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        marginTop: "-65px",
+                        zIndex: "100"
+                    }}>
+                    <Avatar
+                        size={130}
+                        rounded
+                        title="Rd"
+                        containerStyle={{ backgroundColor: "blue" }}
+                    />
+                    <div style={{padding: "10px"}}>
+                        <Text> Profile name </Text>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div style={{display: "flex", flexDirection: "column"}}>
+            {listItem}
+        </div>
       </View>
     </Layout>
   );
 }
+
+
 
 
