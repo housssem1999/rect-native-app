@@ -66,6 +66,7 @@ export default function ({
                     rounded
                     title="Rd"
                     containerStyle={{ backgroundColor: "blue" }}
+                    onPress={() => navigation.navigate('Profile')}
                 />
                 <Text> Avatar 1</Text>
               </div>

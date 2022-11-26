@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet, View} from "react-native";
+import {ScrollView, StyleSheet, View} from "react-native";
 import { MainStackParamList } from "../types/navigation";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Layout, Text, TopNav, useTheme, themeColor } from "react-native-rapi-ui";
@@ -31,7 +31,7 @@ export default function ({
             display: "flex",
             flexDirection: "column"
         }}>
-            <Text style={{padding: "30px", fontWeight: "bold"}}> {value}</Text>
+            <Text style={{padding: "25px", fontWeight: "bold"}}> {value}</Text>
             <Divider/>
         </div>)
     })
@@ -62,6 +62,7 @@ export default function ({
             flexDirection: "column"
         }}
       >
+        <ScrollView>
         <div>
             <div>
                 <Image
@@ -93,6 +94,21 @@ export default function ({
         <div style={{display: "flex", flexDirection: "column"}}>
             {listItem}
         </div>
+          <div
+              style={{
+                display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "10px"
+                }}
+          >
+              <Button
+                  buttonStyle={{
+                      width: 250
+                  }}>Soumettre
+              </Button>
+          </div>
+          </ScrollView>
       </View>
     </Layout>
   );
