@@ -22,58 +22,64 @@ export default function ({
 
     return (
         <Layout>
-            <TopNav
-                middleContent="Rendez Vous"
-                rightContent={
-                    <Ionicons
-                        name={isDarkmode ? "sunny" : "moon"}
-                        size={20}
-                        color={isDarkmode ? themeColor.white100 : themeColor.dark}
-                    />
-                }
-                rightAction={() => {
-                    if (isDarkmode) {
-                        setTheme("light");
-                    } else {
-                        setTheme("dark");
-                    }
-                }}
-            />
+<TopNav
+    middleContent="Rendez Vous"
+    rightContent={
+        <Ionicons
+            name={isDarkmode ? "sunny" : "moon"}
+            size={20}
+            color={isDarkmode ? themeColor.white100 : themeColor.dark}
+        />
+    }
+    leftContent={
+        <Image
+          source={require("../../assets/logo.png")}
+          style={{ width: 60, height: 60 }}
+        />
+        }
+    rightAction={() => {
+        if (isDarkmode) {
+            setTheme("light");
+        } else {
+            setTheme("dark");
+        }
+    }}
+/>
 
-            <Section style={{ marginTop: 5 }}>
-                <SectionContent>
-                    <Text fontWeight="bold" style={{ textAlign: "center" }}>
-                        Votre choix
-                    </Text>
-                    <Button
-                        style={{ marginTop: 10 }}
-                        text="Medecins"
-                        status="info"
-                        onPress={() => {
-                            navigation.navigate("SecondScreen");
-                        }}
-                    />
-                    <Button
-                        text="Analyse ? "
-                        onPress={() => {
-                            navigation.navigate("SecondScreen");
-                        }}
-                        style={{
-                            marginTop: 10,
-                        }}
-                    />
-                      <Button
-                        text="Radiologie..? "
-                        onPress={() => {
-                            navigation.navigate("SecondScreen");
-                        }}
-                        style={{
-                            marginTop: 10,
-                        }}
-                    />
-                 
-                </SectionContent>
-            </Section>
-        </Layout>
+<Section style={{ marginTop: 5 }}>
+    <SectionContent>
+        <Text fontWeight="bold" style={{ textAlign: "center" }}>
+            Votre choix
+        </Text>
+        <Button
+            style={{ marginTop: 10 }}
+            text="Medecins"
+            status="info"
+            onPress={() => {
+                navigation.navigate("RendezVousMed");
+            }}
+        />
+        <Button
+            text="Analyse ? "
+            onPress={() => {
+                navigation.navigate("RendezVousAna");
+            }}
+            style={{
+                marginTop: 10,
+            }}
+        />
+          <Button
+            text="Radiologie..? "
+            onPress={() => {
+                navigation.navigate("RendezVousRad");
+            }}
+            style={{
+                marginTop: 10,
+            }}
+        />
+     
+    </SectionContent>
+</Section>
+</Layout>
     );
 }

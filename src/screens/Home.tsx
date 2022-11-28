@@ -34,6 +34,12 @@ export default function ({
             color={isDarkmode ? themeColor.white100 : themeColor.dark}
           />
         }
+        leftContent={
+          <Image
+            source={require("../../assets/logo.png")}
+            style={{ width: 60, height: 60 }}
+          />
+          }
         rightAction={() => {
           if (isDarkmode) {
             setTheme("light");
@@ -62,31 +68,67 @@ export default function ({
           }}>
               <div>
                 <Avatar
-                    size={130}
+                    size={110}
                     rounded
                     title="Rd"
-                    containerStyle={{ backgroundColor: "blue" }}
-                    onPress={() => navigation.navigate('Profile')}
+                    containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                    source={require("../../assets/image2.png")}
+                    onPress={() => navigation.navigate('Medecins')}
                 />
-                <Text> Avatar 1</Text>
+                <div style={{
+                  width: "100%", 
+                  margin: "auto",
+                  display:"flex", 
+                  justifyContent: "space-around",
+                  padding: "5px 0px 5px 0px"
+                  }}
+                  >
+                  <Text> Médecin </Text>
+                </div>
               </div>
               <div>
                   <Avatar
-                      size={130}
+                      size={110}
                       rounded
                       title="Rd"
-                      containerStyle={{ backgroundColor: "blue" }}
+                      containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                      source={require("../../assets/image6.png")}
+                      
+
                   />
-                  <Text> Avatar 1</Text>
+                  <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <Text> Pharmacie </Text>
+                  </div>
               </div>
               <div>
                   <Avatar
-                      size={130}
+                      size={110}
                       rounded
                       title="Rd"
-                      containerStyle={{ backgroundColor: "blue" }}
+                      containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                      source={require("../../assets/image3.png")}
+                      onPress={() => navigation.navigate('Analyses')}
                   />
-                  <Text> Avatar 1</Text>
+                  <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <Text> Analyse </Text>
+                  </div>
               </div>
           </div>
           <div
@@ -108,30 +150,65 @@ export default function ({
               }}>
               <div>
                   <Avatar
-                      size={130}
+                      size={110}
                       rounded
                       title="Rd"
-                      containerStyle={{ backgroundColor: "blue" }}
+                      containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                      source={require("../../assets/image.png")}
                   />
-                  <Text> Avatar 1</Text>
+                  <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <Text> Ordonnacement </Text>
+                  </div>
               </div>
               <div>
                   <Avatar
-                      size={130}
+                      size={110}
                       rounded
                       title="Rd"
-                      containerStyle={{ backgroundColor: "blue" }}
+                      containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                      source={require("../../assets/image5.png")}
+                      onPress={() => navigation.navigate('Appointment')}
                   />
-                  <Text> Avatar 1</Text>
+                  <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <Text> Rendez vous </Text>
+                  </div>
               </div>
               <div >
                   <Avatar
-                      size={130}
+                      size={110}
                       rounded
                       title="Rd"
-                      containerStyle={{ backgroundColor: "blue" }}
+                      containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                      source={require("../../assets/image3.png")}
+                      onPress={() => navigation.navigate('Radios')}
                   />
-                  <Text> Avatar 1</Text>
+                  <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <Text> Radiologie </Text>
+                  </div>
               </div>
           </div>
           <div
@@ -153,21 +230,53 @@ export default function ({
               }}>
               <div>
                   <Avatar
-                      size={130}
+                      size={110}
                       rounded
                       title="Rd"
-                      containerStyle={{ backgroundColor: "blue" }}
+                      containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                      source={require("../../assets/image7.png")}
                   />
-                  <Text> Avatar 1</Text>
+                  <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <Text> Favoris </Text>
+                  </div>
               </div>
               <div>
                   <Avatar
-                      size={130}
+                      size={110}
                       rounded
                       title="Rd"
-                      containerStyle={{ backgroundColor: "blue" }}
+                      containerStyle={{ backgroundColor: "blue"}}
+                      avatarStyle={{ resizeMode: "center" }}
+                      source={require("../../assets/image8.png")}
+
                   />
-                  <Text> Avatar 1</Text>
+                  <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <div style={{
+                    width: "100%", 
+                    margin: "auto",
+                    display:"flex", 
+                    justifyContent: "space-around",
+                    padding: "5px 0px 5px 0px"
+                    }}
+                  >
+                    <Text> Déconnexion </Text>
+                  </div>
+                  </div>
               </div>
           </div>
       </View>

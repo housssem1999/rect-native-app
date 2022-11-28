@@ -25,6 +25,9 @@ export default function ({
   const { isDarkmode, setTheme } = useTheme();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [firstname, setFirstname] = useState<string>("");
+  const [lastname, setLastname] = useState<string>("");
+  const [phone, setPhone] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
   async function register() {
@@ -42,6 +45,18 @@ export default function ({
       alert(error.message);
     }
   }
+
+  const onChangeText =(text: string | any[]) =>{
+    let newText = '';
+    let numbers = '0123456789';
+
+    for (var i=0; i < text.length; i++) {
+        if(numbers.indexOf(text[i]) > -1 ) {
+            newText = newText + text[i];
+        }
+    }
+    setPhone(newText);
+}
   return (
     <KeyboardAvoidingView behavior="height" enabled style={{ flex: 1 }}>
       <Layout>
@@ -56,15 +71,16 @@ export default function ({
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: isDarkmode ? "#17171E" : themeColor.white100,
+              height:"10px"
             }}
           >
             <Image
               resizeMode="contain"
               style={{
-                height: 220,
-                width: 220,
+                height: 150,
+                width: 150,
               }}
-              source={require("../../../assets/images/register.png")}
+              source={require("../../../assets/logo.png")}
             />
           </View>
           <View
@@ -85,6 +101,43 @@ export default function ({
             >
               Register
             </Text>
+
+            <Text> Firstname </Text>
+            <TextInput
+              containerStyle={{ marginTop: 15 }}
+              placeholder="Enter your firstname"
+              value={firstname}
+              autoCapitalize="none"
+              autoCompleteType="off"
+              autoCorrect={false}
+              keyboardType="email-address"
+              onChangeText={(text) => setFirstname(text)}
+            />
+            
+            <Text> Lastname </Text>
+            <TextInput
+              containerStyle={{ marginTop: 15 }}
+              placeholder="Enter your lastname"
+              value={lastname}
+              autoCapitalize="none"
+              autoCompleteType="off"
+              autoCorrect={false}
+              keyboardType="email-address"
+              onChangeText={(text) => setLastname(text)}
+            />
+            
+            <Text> Phone </Text>
+            <TextInput
+              containerStyle={{ marginTop: 15 }}
+              placeholder="Enter your Phone number"
+              value={phone}
+              autoCapitalize="none"
+              autoCompleteType="off"
+              autoCorrect={false}
+              keyboardType="numeric"
+              onChangeText={(text) => onChangeText(text)}
+            />
+            
             <Text>Email</Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}

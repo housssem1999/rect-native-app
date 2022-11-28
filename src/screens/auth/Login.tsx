@@ -28,7 +28,7 @@ export default function ({
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  async function login() {
+  async function login({}) {
     setLoading(true);
 
     
@@ -59,15 +59,16 @@ export default function ({
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: isDarkmode ? "#17171E" : themeColor.white100,
+              height:"90px"
             }}
           >
             <Image
               resizeMode="contain"
               style={{
-                height: 220,
-                width: 220,
+                height: 150,
+                width: 150,
               }}
-              source={require("../../../assets/images/login.png")}
+              source={require("../../../assets/logo.png")}
             />
           </View>
           <View
@@ -114,7 +115,7 @@ export default function ({
             <Button
               text={loading ? "Loading" : "Continue"}
               onPress={() => {
-                login();
+                navigation.navigate("ForgetPassword");
               }}
               style={{
                 marginTop: 20,

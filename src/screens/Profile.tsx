@@ -46,6 +46,12 @@ export default function ({
             color={isDarkmode ? themeColor.white100 : themeColor.dark}
           />
         }
+        leftContent={
+          <Image
+            source={require("../../assets/logo.png")}
+            style={{ width: 60, height: 60 }}
+          />
+          }
         rightAction={() => {
           if (isDarkmode) {
             setTheme("light");
