@@ -19,21 +19,29 @@ import { Ionicons } from "@expo/vector-icons";
 const Analyses = ({ navigation }: NativeStackScreenProps<MainStackParamList, "Analyses">) => {
     const med = [
         {
-            name: "Dr. John Doe",
-            email: "DrJohn@gmailcom",
+            name: "Dr. Mohamed",
+            email: "DrMoahamed@gmailcom",
             phone: "123456789",
-            date: "2021-05-01",
+            specialite: "analyste",
             adresse: "Rue 1, Ville 1",
             id: 1
         },
         {
-          name: "Dr. leen son",
-          email: "DrLee@gmailcom",
+          name: "Dr. Mahmoud",
+          email: "DrMahmoud@gmailcom",
           phone: "1237405289",
-          date: "2019-03-01",
+          specialite: "analyste",
           adresse: "Rue 2, Ville 2",
           id: 2
         },
+        {
+          name: "Dr. Ahmed",
+          email: "DrAhmed@gmailcom",
+          phone: "1237405289",
+          specialite: "analyste",
+          adresse: "Rue 3, Ville 3",
+          id: 3
+        }
     ]
       const { isDarkmode, setTheme } = useTheme();
     

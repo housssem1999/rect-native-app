@@ -19,18 +19,18 @@ import { Ionicons } from "@expo/vector-icons";
 const Analyses = ({ navigation }: NativeStackScreenProps<MainStackParamList, "Radios">) => {
     const med = [
         {
-            name: "Dr. John Doe",
-            email: "DrJohn@gmailcom",
+            name: "Dr. Mounir",
+            email: "DrMonir@gmailcom",
             phone: "123456789",
-            date: "2021-05-01",
+            specialite: "radiologue",
             adresse: "Rue 1, Ville 1",
             id: 1
         },
         {
-          name: "Dr. leen son",
-          email: "DrLee@gmailcom",
+          name: "Dr. Haroun",
+          email: "DrHaroun@gmailcom",
           phone: "1237405289",
-          date: "2019-03-01",
+          specialite: "radiologue",
           adresse: "Rue 2, Ville 2",
           id: 2
         },

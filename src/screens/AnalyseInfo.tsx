@@ -27,7 +27,7 @@ export default function ({
 
   const { isDarkmode, setTheme } = useTheme();
   const item = route.params;
-  const list = [`Matricuele: ${JSON.stringify(item.item.id)}` , `Email: ${JSON.stringify(item.item.email)}`, `Téléphone: ${JSON.stringify(item.item.phone)}`, `Date de naissance: ${JSON.stringify(item.item.date)}`, `Adresse: ${JSON.stringify(item.item.adresse)}`]
+  const list = [`Matricuele: ${JSON.stringify(item.item.id)}` , `Email: ${JSON.stringify(item.item.email)}`, `Téléphone: ${JSON.stringify(item.item.phone)}`, `Specialite: ${JSON.stringify(item.item.specialite)}`, `Adresse: ${JSON.stringify(item.item.adresse)}`]
     const listItem = list.map((value)=>{
         return(<div style={{
             display: "flex",
@@ -116,6 +116,12 @@ export default function ({
                 }}
           >
           </div>
+          <Button
+          size="md"
+            onPress={() => navigation.navigate("PasserRendezVous")}
+          >
+              <Text> Passez RV</Text>
+          </Button>
           </ScrollView>
       </View>
     </Layout>

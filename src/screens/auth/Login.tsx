@@ -87,12 +87,12 @@ export default function ({
               }}
               size="h3"
             >
-              Login
+              Connexion
             </Text>
             <Text>Email</Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your email"
+              placeholder="Entrez votre email"
               value={email}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -101,10 +101,10 @@ export default function ({
               onChangeText={(text) => setEmail(text)}
             />
 
-            <Text style={{ marginTop: 15 }}>Password</Text>
+            <Text style={{ marginTop: 15 }}>Mot de passe</Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your password"
+              placeholder="Entrez votre mot de passe"
               value={password}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -113,7 +113,7 @@ export default function ({
               onChangeText={(text) => setPassword(text)}
             />
             <Button
-              text={loading ? "Loading" : "Continue"}
+              text={loading ? "Loading" : "Connecter"}
               onPress={() => {
                 navigation.navigate("ForgetPassword");
               }}
@@ -131,7 +131,7 @@ export default function ({
                 justifyContent: "center",
               }}
             >
-              <Text size="md">Don't have an account?</Text>
+              <Text size="md">Vous n'avez pas un compte?</Text>
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate("Register");
@@ -144,7 +144,7 @@ export default function ({
                     marginLeft: 5,
                   }}
                 >
-                  Register here
+                  Registrer 
                 </Text>
               </TouchableOpacity>
             </View>
@@ -162,7 +162,7 @@ export default function ({
                 }}
               >
                 <Text size="md" fontWeight="bold">
-                  Forget password
+                  Mot de passe oublié
                 </Text>
               </TouchableOpacity>
             </View>

@@ -81,12 +81,12 @@ export default function ({
                 padding: 30,
               }}
             >
-              Forget Password
+              Mot de passe oublié
             </Text>
             <Text>Email</Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your email"
+              placeholder="Entrez votre email"
               value={email}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -95,7 +95,7 @@ export default function ({
               onChangeText={(text) => setEmail(text)}
             />
             <Button
-              text={loading ? "Loading" : "Send email"}
+              text={loading ? "Loading" : "Envoyer un email"}
               onPress={() => {
                 forget();
               }}
@@ -113,7 +113,7 @@ export default function ({
                 justifyContent: "center",
               }}
             >
-              <Text size="md">Already have an account?</Text>
+              <Text size="md">Deja j'ai un compte </Text>
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate("Login");
@@ -126,7 +126,7 @@ export default function ({
                     marginLeft: 5,
                   }}
                 >
-                  Login here
+                  Connexion
                 </Text>
               </TouchableOpacity>
             </View>

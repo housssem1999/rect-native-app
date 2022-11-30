@@ -29,6 +29,7 @@ export default function ({
   const [lastname, setLastname] = useState<string>("");
   const [phone, setPhone] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [naissance, setNaissance] = useState<string>('');
 
   async function register() {
     setLoading(true);
@@ -99,13 +100,13 @@ export default function ({
                 padding: 30,
               }}
             >
-              Register
+              Inscription
             </Text>
 
-            <Text> Firstname </Text>
+            <Text> Prénom </Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your firstname"
+              placeholder="Entrez votre prénom"
               value={firstname}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -114,10 +115,10 @@ export default function ({
               onChangeText={(text) => setFirstname(text)}
             />
             
-            <Text> Lastname </Text>
+            <Text> Nom </Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your lastname"
+              placeholder="Entrez votre nom"
               value={lastname}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -126,10 +127,10 @@ export default function ({
               onChangeText={(text) => setLastname(text)}
             />
             
-            <Text> Phone </Text>
+            <Text> Téléphone </Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your Phone number"
+              placeholder="Entrez votre numéro de téléphone"
               value={phone}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -137,11 +138,22 @@ export default function ({
               keyboardType="numeric"
               onChangeText={(text) => onChangeText(text)}
             />
+          <Text> Date de naissance </Text>
+            <TextInput
+              containerStyle={{ marginTop: 15 }}
+              placeholder="Entrez votre date de naissance"
+              value={naissance}
+              autoCapitalize="none"
+              autoCompleteType="off"
+              autoCorrect={false}
+              keyboardType="email-address"
+              onChangeText={(text) => setNaissance(text)}
+            />
             
             <Text>Email</Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your email"
+              placeholder="Entrez votre email"
               value={email}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -150,10 +162,10 @@ export default function ({
               onChangeText={(text) => setEmail(text)}
             />
 
-            <Text style={{ marginTop: 15 }}>Password</Text>
+            <Text style={{ marginTop: 15 }}>Mot de passe</Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
-              placeholder="Enter your password"
+              placeholder="Entrez votre mot de passe"
               value={password}
               autoCapitalize="none"
               autoCompleteType="off"
@@ -162,7 +174,7 @@ export default function ({
               onChangeText={(text) => setPassword(text)}
             />
             <Button
-              text={loading ? "Loading" : "Create an account"}
+              text={loading ? "Loading" : "Créer votre compte"}
               onPress={() => {
                 register();
               }}
@@ -180,7 +192,7 @@ export default function ({
                 justifyContent: "center",
               }}
             >
-              <Text size="md">Already have an account?</Text>
+              <Text size="md">Déja j'ai un compte</Text>
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate("Login");
@@ -193,7 +205,7 @@ export default function ({
                     marginLeft: 5,
                   }}
                 >
-                  Login here
+                  Connexion
                 </Text>
               </TouchableOpacity>
             </View>

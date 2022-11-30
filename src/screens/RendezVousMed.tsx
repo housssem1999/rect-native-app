@@ -16,28 +16,28 @@ import { Searchbar } from 'react-native-paper';
 
 const persons = [ /* list of person data from earlier */
   { 
-    name: "item 1",
-    desc: "item 1 desc", 
+    name: "Médecin 1",
+    desc: "Médecin 1 desc", 
     id: 1 
   }, 
   { 
-    name: "item 2", 
-    desc: "item 2 desc", 
+    name: "Médecin 2", 
+    desc: "Médecin 2 desc", 
     id: 2 
   },
   { 
-    name: "item 3", 
-    desc: "item 3 desc", 
+    name: "Médecin 3", 
+    desc: "Médecin 3 desc", 
     id: 2 
   },
   { 
-    name: "item 4",
-    desc: "item 4 desc",  
+    name: "Médecin 4",
+    desc: "Médecin 4 desc",  
     id: 2 
   },
   { 
-    name: "item 5", 
-    desc: "item 5 desc", 
+    name: "Médecin 5", 
+    desc: "Médecin 5 desc", 
     id: 2 
   }
 ];

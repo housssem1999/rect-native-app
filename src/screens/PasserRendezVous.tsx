@@ -21,6 +21,7 @@ import {
 } from "react-native-rapi-ui";
 import { MainStackParamList } from "../types/navigation";
 import { Ionicons } from "@expo/vector-icons";
+import { DateTimePickerModal } from 'react-native-paper-datetimepicker';
 
 
 export default function ({
@@ -31,6 +32,18 @@ export default function ({
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+
+  const [visible, setVisible] = React.useState(false);
+  const onDismiss = React.useCallback(() => {
+    setVisible(false);
+  }, [setVisible]);
+ 
+  const onChange = React.useCallback(({ date }) => {
+    setVisible(false);
+    console.log({ date });
+  }, []);
+ 
+  const date = new Date();
    
   return (
     <KeyboardAvoidingView behavior="height" enabled style={{ flex: 1 }}>
@@ -100,7 +113,7 @@ export default function ({
             >
               Passer Rendez-vous
             </Text>
-            <Text style={{ marginTop: 15 }}>Name</Text>
+            <Text style={{ marginTop: 15 }}>Nom</Text>
             <TextInput
               containerStyle={{ marginTop: 15 }}
               placeholder="Enter your name"
@@ -131,7 +144,17 @@ export default function ({
               autoCorrect={false}
               onChangeText={(text) => setDescription(text)}
             />
-            
+              <>
+                <DateTimePickerModal
+                  visible={visible}
+                  onDismiss={onDismiss}
+                  date={date}
+                  onConfirm={onChange}
+                  label="choisir une date"
+                />
+              
+                <Button text="choisir une date" onPress={() => setVisible(true)}/>
+              </>
             <Button
               text={loading ? "Loading" : "Passer Rendez-vous"}
               onPress={() => {

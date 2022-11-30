@@ -22,7 +22,7 @@ const Medecins = ({ navigation }: NativeStackScreenProps<MainStackParamList, "Me
             name: "Dr. John Doe",
             email: "DrJohn@gmailcom",
             phone: "123456789",
-            date: "2021-05-01",
+            specialite: "Cardiologue",
             adresse: "Rue 1, Ville 1",
             id: 1
         },
@@ -30,7 +30,7 @@ const Medecins = ({ navigation }: NativeStackScreenProps<MainStackParamList, "Me
           name: "Dr. leen son",
           email: "DrLee@gmailcom",
           phone: "1237405289",
-          date: "2019-03-01",
+          specialite: "Dentiste",
           adresse: "Rue 2, Ville 2",
           id: 2
         },

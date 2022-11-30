@@ -26,7 +26,7 @@ export default function ({
   return (
     <Layout>
       <TopNav
-        middleContent="Home"
+        middleContent="Acceuil"
         rightContent={
           <Ionicons
             name={isDarkmode ? "sunny" : "moon"}
@@ -87,16 +87,15 @@ export default function ({
                   <Text> Médecin </Text>
                 </div>
               </div>
-              <div>
+              <div >
                   <Avatar
                       size={110}
                       rounded
                       title="Rd"
                       containerStyle={{ backgroundColor: "blue"}}
                       avatarStyle={{ resizeMode: "center" }}
-                      source={require("../../assets/image6.png")}
-                      
-
+                      source={require("../../assets/image3.png")}
+                      onPress={() => navigation.navigate('Radios')}
                   />
                   <div style={{
                     width: "100%", 
@@ -106,7 +105,7 @@ export default function ({
                     padding: "5px 0px 5px 0px"
                     }}
                   >
-                    <Text> Pharmacie </Text>
+                    <Text> Radiologie </Text>
                   </div>
               </div>
               <div>
@@ -196,7 +195,7 @@ export default function ({
                       title="Rd"
                       containerStyle={{ backgroundColor: "blue"}}
                       avatarStyle={{ resizeMode: "center" }}
-                      source={require("../../assets/image3.png")}
+                      source={require("../../assets/image.png")}
                       onPress={() => navigation.navigate('Radios')}
                   />
                   <div style={{
@@ -207,7 +206,7 @@ export default function ({
                     padding: "5px 0px 5px 0px"
                     }}
                   >
-                    <Text> Radiologie </Text>
+                    <Text> Résultas </Text>
                   </div>
               </div>
           </div>
@@ -235,7 +234,7 @@ export default function ({
                       title="Rd"
                       containerStyle={{ backgroundColor: "blue"}}
                       avatarStyle={{ resizeMode: "center" }}
-                      source={require("../../assets/image7.png")}
+                      source={require("../../assets/image.png")}
                   />
                   <div style={{
                     width: "100%", 
@@ -245,7 +244,7 @@ export default function ({
                     padding: "5px 0px 5px 0px"
                     }}
                   >
-                    <Text> Favoris </Text>
+                    <Text> Certificats </Text>
                   </div>
               </div>
               <div>
